@@ -1,0 +1,241 @@
+Script started on 2025-06-02 12:32:59+00:00 [TERM="xterm-color" TTY="/dev/pts/0" COLUMNS="-1" LINES="-1"]
+2025-06-02 12:33:03,978 P40086 INFO FuxiCTR version: 2.3.7
+2025-06-02 12:33:03,980 P40086 INFO Params: {
+    "batch_norm": "False",
+    "batch_size": "10000",
+    "data_format": "csv",
+    "data_root": "../../../data/",
+    "dataset_id": "avazu_custom",
+    "embedding_dim": "40",
+    "embedding_regularizer": "0",
+    "epochs": "100",
+    "feature_specs": "{'C1': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'banner_pos': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'site_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'site_domain': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'site_category': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'app_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'app_domain': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'app_category': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'device_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'device_ip': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'device_model': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'device_type': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'device_conn_type': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C14': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C15': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C16': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C17': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C18': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C19': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C20': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'C21': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'mday': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'hour': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'wday': {'type': 'categorical', 'dtype': 'str', 'active': True}}",
+    "gpu": "-1",
+    "hidden_activations": "relu",
+    "hidden_units": "[300, 300, 300]",
+    "label_col": "[{'name': 'click', 'dtype': 'int'}]",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "model": "WideDeep",
+    "model_id": "WideDeep_avazu",
+    "model_root": "./model_ckpt/",
+    "monitor": "{'AUC': 1, 'logloss': -1}",
+    "monitor_mode": "max",
+    "net_dropout": "0",
+    "net_regularizer": "0",
+    "optimizer": "adam",
+    "seed": "2019",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../../data/avazu_custom/test.csv",
+    "train_data": "../../../data/avazu_custom/train.csv",
+    "use_features": "['C1', 'banner_pos', 'site_id', 'site_domain', 'site_category', 'app_id', 'app_domain', 'app_category', 'device_id', 'device_ip', 'device_model', 'device_type', 'device_conn_type', 'C14', 'C15', 'C16', 'C17', 'C18', 'C19', 'C20', 'C21', 'mday', 'hour', 'wday']",
+    "valid_data": "../../../data/avazu_custom/valid.csv",
+    "verbose": "1"
+}
+2025-06-02 12:33:03,982 P40086 INFO Set up feature processor...
+2025-06-02 12:33:03,983 P40086 WARNING Skip rebuilding ../../../data/avazu_custom/feature_map.json. Please delete it manually if rebuilding is required.
+2025-06-02 12:33:03,984 P40086 INFO Load feature_map from json: ../../../data/avazu_custom/feature_map.json
+2025-06-02 12:33:03,987 P40086 INFO Set column index...
+2025-06-02 12:33:03,988 P40086 INFO Feature specs: {
+    "C1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 7, 'dtype': 'str', 'active': True}",
+    "C14": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 348, 'dtype': 'str', 'active': True}",
+    "C15": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6, 'dtype': 'str', 'active': True}",
+    "C16": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 7, 'dtype': 'str', 'active': True}",
+    "C17": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 187, 'dtype': 'str', 'active': True}",
+    "C18": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6, 'dtype': 'str', 'active': True}",
+    "C19": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 50, 'dtype': 'str', 'active': True}",
+    "C20": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 76, 'dtype': 'str', 'active': True}",
+    "C21": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 48, 'dtype': 'str', 'active': True}",
+    "app_category": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 12, 'dtype': 'str', 'active': True}",
+    "app_domain": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 22, 'dtype': 'str', 'active': True}",
+    "app_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 126, 'dtype': 'str', 'active': True}",
+    "banner_pos": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6, 'dtype': 'str', 'active': True}",
+    "device_conn_type": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6, 'dtype': 'str', 'active': True}",
+    "device_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 61, 'dtype': 'str', 'active': True}",
+    "device_ip": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 615, 'dtype': 'str', 'active': True}",
+    "device_model": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 371, 'dtype': 'str', 'active': True}",
+    "device_type": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6, 'dtype': 'str', 'active': True}",
+    "hour": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 26, 'dtype': 'str', 'active': True}",
+    "mday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 12, 'dtype': 'str', 'active': True}",
+    "site_category": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 12, 'dtype': 'str', 'active': True}",
+    "site_domain": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 139, 'dtype': 'str', 'active': True}",
+    "site_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 167, 'dtype': 'str', 'active': True}",
+    "wday": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 9, 'dtype': 'str', 'active': True}"
+}
+2025-06-02 12:33:06,070 P40086 INFO Total number of parameters: 564526.
+2025-06-02 12:33:06,071 P40086 INFO Loading datasets...
+2025-06-02 12:33:06,086 P40086 INFO Train samples: total/1000, blocks/1
+2025-06-02 12:33:06,093 P40086 INFO Validation samples: total/1000, blocks/1
+2025-06-02 12:33:06,093 P40086 INFO Loading train and validation data done.
+2025-06-02 12:33:06,094 P40086 INFO Start training: 1 batches/epoch
+2025-06-02 12:33:06,094 P40086 INFO ************ Epoch=1 start ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:06,252 P40086 INFO Train loss: 0.693346
+2025-06-02 12:33:06,252 P40086 INFO Evaluation @epoch 1 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.85it/s]
+2025-06-02 12:33:06,349 P40086 INFO [Metrics] AUC: 0.484516 - logloss: 0.680595
+2025-06-02 12:33:06,350 P40086 INFO Save best model: monitor(max)=-0.196078
+100% 1/1 [00:00<00:00,  3.52it/s]100% 1/1 [00:00<00:00,  3.32it/s]
+2025-06-02 12:33:06,397 P40086 INFO ************ Epoch=1 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:06,539 P40086 INFO Train loss: 0.679498
+2025-06-02 12:33:06,540 P40086 INFO Evaluation @epoch 2 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.04it/s]
+2025-06-02 12:33:06,644 P40086 INFO [Metrics] AUC: 0.487026 - logloss: 0.663717
+2025-06-02 12:33:06,645 P40086 INFO Save best model: monitor(max)=-0.176691
+100% 1/1 [00:00<00:00,  3.66it/s]100% 1/1 [00:00<00:00,  3.23it/s]
+2025-06-02 12:33:06,708 P40086 INFO ************ Epoch=2 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:06,867 P40086 INFO Train loss: 0.661094
+2025-06-02 12:33:06,867 P40086 INFO Evaluation @epoch 3 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 10.79it/s]
+2025-06-02 12:33:06,973 P40086 INFO [Metrics] AUC: 0.486710 - logloss: 0.643169
+2025-06-02 12:33:06,973 P40086 INFO Save best model: monitor(max)=-0.156459
+100% 1/1 [00:00<00:00,  3.46it/s]100% 1/1 [00:00<00:00,  3.24it/s]
+2025-06-02 12:33:07,019 P40086 INFO ************ Epoch=3 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:07,164 P40086 INFO Train loss: 0.638642
+2025-06-02 12:33:07,164 P40086 INFO Evaluation @epoch 4 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 10.89it/s]
+2025-06-02 12:33:07,267 P40086 INFO [Metrics] AUC: 0.489260 - logloss: 0.617707
+2025-06-02 12:33:07,268 P40086 INFO Save best model: monitor(max)=-0.128447
+100% 1/1 [00:00<00:00,  3.69it/s]100% 1/1 [00:00<00:00,  3.43it/s]
+2025-06-02 12:33:07,312 P40086 INFO ************ Epoch=4 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:07,461 P40086 INFO Train loss: 0.610594
+2025-06-02 12:33:07,462 P40086 INFO Evaluation @epoch 5 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.43it/s]
+2025-06-02 12:33:07,560 P40086 INFO [Metrics] AUC: 0.492744 - logloss: 0.586479
+2025-06-02 12:33:07,561 P40086 INFO Save best model: monitor(max)=-0.093735
+100% 1/1 [00:00<00:00,  3.69it/s]100% 1/1 [00:00<00:00,  3.44it/s]
+2025-06-02 12:33:07,605 P40086 INFO ************ Epoch=5 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:07,752 P40086 INFO Train loss: 0.575867
+2025-06-02 12:33:07,753 P40086 INFO Evaluation @epoch 6 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00,  9.56it/s]
+2025-06-02 12:33:07,869 P40086 INFO [Metrics] AUC: 0.496554 - logloss: 0.550114
+2025-06-02 12:33:07,870 P40086 INFO Save best model: monitor(max)=-0.053560
+100% 1/1 [00:00<00:00,  3.45it/s]100% 1/1 [00:00<00:00,  3.24it/s]
+2025-06-02 12:33:07,916 P40086 INFO ************ Epoch=6 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:08,060 P40086 INFO Train loss: 0.534810
+2025-06-02 12:33:08,061 P40086 INFO Evaluation @epoch 7 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A
+100% 1/1 [00:00<00:00,  8.14it/s][A100% 1/1 [00:00<00:00,  6.86it/s]
+2025-06-02 12:33:08,221 P40086 INFO [Metrics] AUC: 0.504531 - logloss: 0.511563
+2025-06-02 12:33:08,224 P40086 INFO Save best model: monitor(max)=-0.007032
+100% 1/1 [00:00<00:00,  2.94it/s]100% 1/1 [00:00<00:00,  2.73it/s]
+2025-06-02 12:33:08,284 P40086 INFO ************ Epoch=7 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:08,433 P40086 INFO Train loss: 0.490151
+2025-06-02 12:33:08,434 P40086 INFO Evaluation @epoch 8 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.00it/s]
+2025-06-02 12:33:08,537 P40086 INFO [Metrics] AUC: 0.517237 - logloss: 0.478688
+2025-06-02 12:33:08,538 P40086 INFO Save best model: monitor(max)=0.038550
+100% 1/1 [00:00<00:00,  3.61it/s]100% 1/1 [00:00<00:00,  3.36it/s]
+2025-06-02 12:33:08,584 P40086 INFO ************ Epoch=8 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:08,735 P40086 INFO Train loss: 0.449506
+2025-06-02 12:33:08,736 P40086 INFO Evaluation @epoch 9 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.69it/s]
+2025-06-02 12:33:08,834 P40086 INFO [Metrics] AUC: 0.532549 - logloss: 0.465198
+2025-06-02 12:33:08,835 P40086 INFO Save best model: monitor(max)=0.067352
+100% 1/1 [00:00<00:00,  3.50it/s]100% 1/1 [00:00<00:00,  3.26it/s]
+2025-06-02 12:33:08,894 P40086 INFO ************ Epoch=9 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:09,042 P40086 INFO Train loss: 0.426344
+2025-06-02 12:33:09,043 P40086 INFO Evaluation @epoch 10 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.44it/s]
+2025-06-02 12:33:09,141 P40086 INFO [Metrics] AUC: 0.562202 - logloss: 0.480892
+2025-06-02 12:33:09,142 P40086 INFO Save best model: monitor(max)=0.081310
+100% 1/1 [00:00<00:00,  3.68it/s]100% 1/1 [00:00<00:00,  3.42it/s]
+2025-06-02 12:33:09,188 P40086 INFO ************ Epoch=10 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:09,343 P40086 INFO Train loss: 0.430084
+2025-06-02 12:33:09,344 P40086 INFO Evaluation @epoch 11 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 10.51it/s]
+2025-06-02 12:33:09,449 P40086 INFO [Metrics] AUC: 0.590869 - logloss: 0.502701
+2025-06-02 12:33:09,450 P40086 INFO Save best model: monitor(max)=0.088168
+100% 1/1 [00:00<00:00,  3.52it/s]100% 1/1 [00:00<00:00,  3.27it/s]
+2025-06-02 12:33:09,497 P40086 INFO ************ Epoch=11 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:09,648 P40086 INFO Train loss: 0.438530
+2025-06-02 12:33:09,648 P40086 INFO Evaluation @epoch 12 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.15it/s]
+2025-06-02 12:33:09,748 P40086 INFO [Metrics] AUC: 0.609267 - logloss: 0.505025
+2025-06-02 12:33:09,749 P40086 INFO Save best model: monitor(max)=0.104242
+100% 1/1 [00:00<00:00,  3.61it/s]100% 1/1 [00:00<00:00,  3.37it/s]
+2025-06-02 12:33:09,795 P40086 INFO ************ Epoch=12 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:09,960 P40086 INFO Train loss: 0.427787
+2025-06-02 12:33:09,961 P40086 INFO Evaluation @epoch 13 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.35it/s]
+2025-06-02 12:33:10,059 P40086 INFO [Metrics] AUC: 0.619667 - logloss: 0.491171
+2025-06-02 12:33:10,060 P40086 INFO Save best model: monitor(max)=0.128495
+100% 1/1 [00:00<00:00,  3.49it/s]100% 1/1 [00:00<00:00,  3.26it/s]
+2025-06-02 12:33:10,104 P40086 INFO ************ Epoch=13 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:10,251 P40086 INFO Train loss: 0.401518
+2025-06-02 12:33:10,252 P40086 INFO Evaluation @epoch 14 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00,  9.36it/s]
+2025-06-02 12:33:10,369 P40086 INFO [Metrics] AUC: 0.626264 - logloss: 0.472742
+2025-06-02 12:33:10,370 P40086 INFO Save best model: monitor(max)=0.153522
+100% 1/1 [00:00<00:00,  3.45it/s]100% 1/1 [00:00<00:00,  3.20it/s]
+2025-06-02 12:33:10,418 P40086 INFO ************ Epoch=14 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:10,562 P40086 INFO Train loss: 0.371008
+2025-06-02 12:33:10,563 P40086 INFO Evaluation @epoch 15 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 10.44it/s]
+2025-06-02 12:33:10,669 P40086 INFO [Metrics] AUC: 0.630335 - logloss: 0.458552
+2025-06-02 12:33:10,670 P40086 INFO Save best model: monitor(max)=0.171783
+100% 1/1 [00:00<00:00,  3.64it/s]100% 1/1 [00:00<00:00,  3.38it/s]
+2025-06-02 12:33:10,716 P40086 INFO ************ Epoch=15 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:10,862 P40086 INFO Train loss: 0.344310
+2025-06-02 12:33:10,863 P40086 INFO Evaluation @epoch 16 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00,  9.05it/s]
+2025-06-02 12:33:10,984 P40086 INFO [Metrics] AUC: 0.632497 - logloss: 0.451638
+2025-06-02 12:33:10,985 P40086 INFO Save best model: monitor(max)=0.180859
+100% 1/1 [00:00<00:00,  3.44it/s]100% 1/1 [00:00<00:00,  3.21it/s]
+2025-06-02 12:33:11,029 P40086 INFO ************ Epoch=16 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:11,179 P40086 INFO Train loss: 0.324181
+2025-06-02 12:33:11,179 P40086 INFO Evaluation @epoch 17 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 10.57it/s]
+2025-06-02 12:33:11,287 P40086 INFO [Metrics] AUC: 0.633527 - logloss: 0.450544
+2025-06-02 12:33:11,287 P40086 INFO Save best model: monitor(max)=0.182983
+100% 1/1 [00:00<00:00,  3.53it/s]100% 1/1 [00:00<00:00,  3.30it/s]
+2025-06-02 12:33:11,334 P40086 INFO ************ Epoch=17 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:11,482 P40086 INFO Train loss: 0.309405
+2025-06-02 12:33:11,483 P40086 INFO Evaluation @epoch 18 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.04it/s]
+2025-06-02 12:33:11,583 P40086 INFO [Metrics] AUC: 0.633829 - logloss: 0.451969
+2025-06-02 12:33:11,584 P40086 INFO Monitor(max)=0.181860 STOP!
+2025-06-02 12:33:11,585 P40086 INFO Reduce learning rate on plateau: 0.000100
+100% 1/1 [00:00<00:00,  4.00it/s]100% 1/1 [00:00<00:00,  3.69it/s]
+2025-06-02 12:33:11,608 P40086 INFO ************ Epoch=18 end ************
+  0% 0/1 [00:00<?, ?it/s]2025-06-02 12:33:11,761 P40086 INFO Train loss: 0.296288
+2025-06-02 12:33:11,762 P40086 INFO Evaluation @epoch 19 - batch 1: 
+
+  0% 0/1 [00:00<?, ?it/s][A100% 1/1 [00:00<00:00, 11.04it/s]
+2025-06-02 12:33:11,863 P40086 INFO [Metrics] AUC: 0.633664 - logloss: 0.452075
+2025-06-02 12:33:11,864 P40086 INFO Monitor(max)=0.181589 STOP!
+2025-06-02 12:33:11,864 P40086 INFO Reduce learning rate on plateau: 0.000010
+2025-06-02 12:33:11,864 P40086 INFO ********* Epoch=19 early stop *********
+  0% 0/1 [00:00<?, ?it/s]
+2025-06-02 12:33:11,887 P40086 INFO Training finished.
+2025-06-02 12:33:11,887 P40086 INFO Load best model: /content/drive/MyDrive/FuxiCTR/model_zoo/WideDeep/WideDeep_torch/model_ckpt/avazu_custom/WideDeep_avazu.model
+2025-06-02 12:33:11,908 P40086 INFO ****** Validation evaluation ******
+  0% 0/1 [00:00<?, ?it/s]100% 1/1 [00:00<00:00,  9.78it/s]
+2025-06-02 12:33:12,017 P40086 INFO [Metrics] logloss: 0.450544 - AUC: 0.633527
+2025-06-02 12:33:12,264 P40086 INFO ******** Test evaluation ********
+2025-06-02 12:33:12,264 P40086 INFO Loading datasets...
+2025-06-02 12:33:12,273 P40086 INFO Test samples: total/1000, blocks/1
+2025-06-02 12:33:12,273 P40086 INFO Loading test data done.
+  0% 0/1 [00:00<?, ?it/s]100% 1/1 [00:00<00:00, 11.21it/s]
+2025-06-02 12:33:12,370 P40086 INFO [Metrics] logloss: 0.464332 - AUC: 0.638008
+
+Script done on 2025-06-02 12:33:13+00:00 [COMMAND_EXIT_CODE="0"]
