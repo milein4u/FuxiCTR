@@ -81,7 +81,7 @@ if __name__ == '__main__':
     feature_map_json = os.path.join(data_dir, "feature_map.json")
 
     # Build dataset if CSV
-    if params["data_format"] == "csv":
+    if params["data_format"] == "parquet":
         feature_processor = FeatureProcessor(
             feature_cols=feature_cols_for_processor,
             label_col=params['label_col'],
@@ -93,7 +93,7 @@ if __name__ == '__main__':
             train_data=params["train_data"],
             valid_data=params["valid_data"],
             test_data=params["test_data"],
-            data_format="csv",
+            data_format="parquet",
             feature_map_path=feature_map_json
         )
 
@@ -102,6 +102,16 @@ if __name__ == '__main__':
 
     # Load FeatureMap from generated JSON
     feature_map = FeatureMap(params['dataset_id'], data_dir)
+
+    if not os.path.exists(feature_map_json):
+        logging.info(f"🔧 feature_map.json not found, generating from input files...")
+        feature_processor = FeatureProcessor(
+            feature_cols=feature_cols_for_processor,
+            label_col=params['label_col'],
+            dataset_id=params['dataset_id'],
+            data_root=params['data_root']
+        )
+
     feature_map.load(feature_map_json, params)
 
     logging.info("Feature specs: " + print_to_json(feature_map.features))

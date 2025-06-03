@@ -1,0 +1,491 @@
+{
+    "dataset_id": "criteoprivate_custom",
+    "num_fields": 60,
+    "total_features": 924880,
+    "input_length": 60,
+    "labels": [
+        "is_clicked"
+    ],
+    "features": [
+        {
+            "user_id": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 90097
+            }
+        },
+        {
+            "display_order": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 76
+            }
+        },
+        {
+            "campaign_id": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 5222
+            }
+        },
+        {
+            "publisher_id": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 12542
+            }
+        },
+        {
+            "features_kv_bits_constrained_0": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 102
+            }
+        },
+        {
+            "features_kv_bits_constrained_1": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 6152
+            }
+        },
+        {
+            "features_kv_bits_constrained_2": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 11
+            }
+        },
+        {
+            "features_kv_bits_constrained_3": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 12
+            }
+        },
+        {
+            "features_kv_bits_constrained_4": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 43529
+            }
+        },
+        {
+            "features_kv_bits_constrained_6": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 42748
+            }
+        },
+        {
+            "features_kv_bits_constrained_7": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 9849
+            }
+        },
+        {
+            "features_kv_bits_constrained_8": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 2147
+            }
+        },
+        {
+            "features_kv_bits_constrained_9": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 4815
+            }
+        },
+        {
+            "features_kv_bits_constrained_10": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 10858
+            }
+        },
+        {
+            "features_kv_bits_constrained_11": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 2187
+            }
+        },
+        {
+            "features_kv_bits_constrained_12": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 137
+            }
+        },
+        {
+            "features_kv_bits_constrained_13": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 308
+            }
+        },
+        {
+            "features_kv_bits_constrained_15": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 56
+            }
+        },
+        {
+            "features_kv_bits_constrained_16": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 99
+            }
+        },
+        {
+            "features_kv_bits_constrained_17": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 135
+            }
+        },
+        {
+            "features_kv_bits_constrained_18": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 283
+            }
+        },
+        {
+            "features_kv_bits_constrained_19": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 517
+            }
+        },
+        {
+            "features_kv_bits_constrained_20": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 875
+            }
+        },
+        {
+            "features_kv_bits_constrained_21": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 1582
+            }
+        },
+        {
+            "features_kv_bits_constrained_22": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 176
+            }
+        },
+        {
+            "features_kv_bits_constrained_23": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 16225
+            }
+        },
+        {
+            "features_kv_bits_constrained_24": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 10621
+            }
+        },
+        {
+            "features_kv_bits_constrained_25": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 47838
+            }
+        },
+        {
+            "features_kv_bits_constrained_26": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 4
+            }
+        },
+        {
+            "features_kv_bits_constrained_27": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 37996
+            }
+        },
+        {
+            "features_kv_bits_constrained_28": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 101937
+            }
+        },
+        {
+            "features_kv_bits_constrained_29": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 97976
+            }
+        },
+        {
+            "features_kv_bits_constrained_30": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 59067
+            }
+        },
+        {
+            "features_kv_not_constrained_1": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 89
+            }
+        },
+        {
+            "features_kv_not_constrained_2": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 13
+            }
+        },
+        {
+            "features_kv_not_constrained_3": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 4
+            }
+        },
+        {
+            "features_kv_not_constrained_4": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 25239
+            }
+        },
+        {
+            "features_kv_not_constrained_5": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 29671
+            }
+        },
+        {
+            "features_kv_not_constrained_6": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 17266
+            }
+        },
+        {
+            "features_kv_not_constrained_7": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 22838
+            }
+        },
+        {
+            "features_kv_not_constrained_8": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 14660
+            }
+        },
+        {
+            "features_browser_bits_constrained_0": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 538
+            }
+        },
+        {
+            "features_browser_bits_constrained_1": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 20793
+            }
+        },
+        {
+            "features_browser_bits_constrained_2": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 474
+            }
+        },
+        {
+            "features_browser_bits_constrained_3": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 5453
+            }
+        },
+        {
+            "features_browser_bits_constrained_4": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 39776
+            }
+        },
+        {
+            "features_browser_bits_constrained_5": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 1638
+            }
+        },
+        {
+            "features_browser_bits_constrained_6": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 3515
+            }
+        },
+        {
+            "features_browser_bits_constrained_7": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 1172
+            }
+        },
+        {
+            "features_browser_bits_constrained_8": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 4668
+            }
+        },
+        {
+            "features_browser_bits_constrained_9": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 1080
+            }
+        },
+        {
+            "features_browser_bits_constrained_10": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 1768
+            }
+        },
+        {
+            "features_ctx_not_constrained_0": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 31
+            }
+        },
+        {
+            "features_ctx_not_constrained_1": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 14103
+            }
+        },
+        {
+            "features_ctx_not_constrained_2": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 4548
+            }
+        },
+        {
+            "features_ctx_not_constrained_3": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 105
+            }
+        },
+        {
+            "features_ctx_not_constrained_4": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 53038
+            }
+        },
+        {
+            "features_ctx_not_constrained_5": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 55730
+            }
+        },
+        {
+            "features_ctx_not_constrained_6": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 11
+            }
+        },
+        {
+            "features_ctx_not_constrained_7": {
+                "source": "",
+                "type": "categorical",
+                "padding_idx": 0,
+                "vocab_size": 480
+            }
+        }
+    ]
+}

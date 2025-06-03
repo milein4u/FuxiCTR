@@ -1,41 +1,6 @@
-Base:
-    model_root: './checkpoints/'
-    num_workers: 3
-    verbose: 1
-    early_stop_patience: 2
-    pickle_feature_encoder: True
-    save_best_only: True
-    eval_steps: null
-    debug_mode: False
-    group_id: null
-    use_features: null
-    feature_specs: null
-    feature_config: null
-
-AFM_test:
+AFM_avazu: # This is a config template
     model: AFM
-    dataset_id: tiny_npz
-    loss: binary_crossentropy
-    metrics: ['logloss', 'AUC']
-    task: binary_classification
-    optimizer: adam
-    learning_rate: 1.e-3
-    embedding_regularizer: 1.e-8
-    net_regularizer: 0
-    batch_size: 128
-    embedding_dim: 4
-    attention_dim: 8
-    attention_dropout: [0, 0]
-    use_attention: True
-    epochs: 1
-    shuffle: True
-    seed: 2019
-    monitor: 'AUC'
-    monitor_mode: 'max'
-
-AFM_default: # This is a config template
-    model: AFM
-    dataset_id: TBD
+    dataset_id: avazu_custom
     loss: binary_crossentropy
     metrics: ['logloss', 'AUC']
     task: binary_classification
@@ -54,4 +19,211 @@ AFM_default: # This is a config template
     seed: 2019
     monitor: {'AUC': 1, 'logloss': -1}
     monitor_mode: 'max'
+
+    label_col:
+    - name: click
+      dtype: int
+
+    use_features:
+      - C1
+      - banner_pos
+      - site_id
+      - site_domain
+      - site_category
+      - app_id
+      - app_domain
+      - app_category
+      - device_id
+      - device_ip
+      - device_model
+      - device_type
+      - device_conn_type
+      - C14
+      - C15
+      - C16
+      - C17
+      - C18
+      - C19
+      - C20
+      - C21
+      - mday
+      - hour
+      - wday
+
+    feature_specs:
+      C1: {type: categorical, dtype: str, active: True}
+      banner_pos: {type: categorical, dtype: str, active: True}
+      site_id: {type: categorical, dtype: str, active: True}
+      site_domain: {type: categorical, dtype: str, active: True}
+      site_category: {type: categorical, dtype: str, active: True}
+      app_id: {type: categorical, dtype: str, active: True}
+      app_domain: {type: categorical, dtype: str, active: True}
+      app_category: {type: categorical, dtype: str, active: True}
+      device_id: {type: categorical, dtype: str, active: True}
+      device_ip: {type: categorical, dtype: str, active: True}
+      device_model: {type: categorical, dtype: str, active: True}
+      device_type: {type: categorical, dtype: str, active: True}
+      device_conn_type: {type: categorical, dtype: str, active: True}
+      C14: {type: categorical, dtype: str, active: True}
+      C15: {type: categorical, dtype: str, active: True}
+      C16: {type: categorical, dtype: str, active: True}
+      C17: {type: categorical, dtype: str, active: True}
+      C18: {type: categorical, dtype: str, active: True}
+      C19: {type: categorical, dtype: str, active: True}
+      C20: {type: categorical, dtype: str, active: True}
+      C21: {type: categorical, dtype: str, active: True}
+      mday: {type: categorical, dtype: str, active: True}
+      hour: {type: categorical, dtype: str, active: True}
+      wday: {type: categorical, dtype: str, active: True}
+
+AFM_criteo: # This is a config template
+    model: AFM
+    dataset_id: criteoprivate_custom
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    attention_dropout: [0, 0]
+    embedding_dropout: 0
+    use_attention: True
+    epochs: 100
+    shuffle: True
+    seed: 2019
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    attention_dim: 64
+    embedding_dim: 32
+    batch_size: 4096
+   
+
+    label_col:
+    - name: is_clicked
+      dtype: int
+
+    use_features:
+      - user_id
+      - display_order
+      - campaign_id
+      - publisher_id
+      - features_kv_bits_constrained_0
+      - features_kv_bits_constrained_1
+      - features_kv_bits_constrained_2
+      - features_kv_bits_constrained_3
+      - features_kv_bits_constrained_4
+      - features_kv_bits_constrained_6
+      - features_kv_bits_constrained_7
+      - features_kv_bits_constrained_8
+      - features_kv_bits_constrained_9
+      - features_kv_bits_constrained_10
+      - features_kv_bits_constrained_11
+      - features_kv_bits_constrained_12
+      - features_kv_bits_constrained_13
+      - features_kv_bits_constrained_15
+      - features_kv_bits_constrained_16
+      - features_kv_bits_constrained_17
+      - features_kv_bits_constrained_18
+      - features_kv_bits_constrained_19
+      - features_kv_bits_constrained_20
+      - features_kv_bits_constrained_21
+      - features_kv_bits_constrained_22
+      - features_kv_bits_constrained_23
+      - features_kv_bits_constrained_24
+      - features_kv_bits_constrained_25
+      - features_kv_bits_constrained_26
+      - features_kv_bits_constrained_27
+      - features_kv_bits_constrained_28
+      - features_kv_bits_constrained_29
+      - features_kv_bits_constrained_30
+      - features_kv_not_constrained_1
+      - features_kv_not_constrained_2
+      - features_kv_not_constrained_3
+      - features_kv_not_constrained_4
+      - features_kv_not_constrained_5
+      - features_kv_not_constrained_6
+      - features_kv_not_constrained_7
+      - features_kv_not_constrained_8
+      - features_browser_bits_constrained_0
+      - features_browser_bits_constrained_1
+      - features_browser_bits_constrained_2
+      - features_browser_bits_constrained_3
+      - features_browser_bits_constrained_4
+      - features_browser_bits_constrained_5
+      - features_browser_bits_constrained_6
+      - features_browser_bits_constrained_7
+      - features_browser_bits_constrained_8
+      - features_browser_bits_constrained_9
+      - features_browser_bits_constrained_10
+      - features_ctx_not_constrained_0
+      - features_ctx_not_constrained_1
+      - features_ctx_not_constrained_2
+      - features_ctx_not_constrained_3
+      - features_ctx_not_constrained_4
+      - features_ctx_not_constrained_5
+      - features_ctx_not_constrained_6
+      - features_ctx_not_constrained_7
+
+    feature_specs:
+      user_id: {type: categorical, dtype: str, active: True}
+      display_order: {type: categorical, dtype: str, active: True}
+      campaign_id: {type: categorical, dtype: str, active: True}
+      publisher_id: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_0: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_1: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_2: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_3: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_4: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_6: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_7: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_8: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_9: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_10: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_11: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_12: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_13: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_15: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_16: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_17: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_18: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_19: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_20: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_21: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_22: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_23: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_24: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_25: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_26: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_27: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_28: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_29: {type: categorical, dtype: str, active: True}
+      features_kv_bits_constrained_30: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_1: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_2: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_3: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_4: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_5: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_6: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_7: {type: categorical, dtype: str, active: True}
+      features_kv_not_constrained_8: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_0: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_1: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_2: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_3: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_4: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_5: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_6: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_7: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_8: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_9: {type: categorical, dtype: str, active: True}
+      features_browser_bits_constrained_10: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_0: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_1: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_2: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_3: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_4: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_5: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_6: {type: categorical, dtype: str, active: True}
+      features_ctx_not_constrained_7: {type: categorical, dtype: str, active: True}
 

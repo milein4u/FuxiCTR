@@ -1,7 +1,14 @@
 ### Tiny data for tests only
-tiny_npz:
+# tiny_npz:
+#     data_root: ../../data/
+#     data_format: npz
+#     train_data: ../../data/tiny_npz/train.npz
+#     valid_data: ../../data/tiny_npz/valid.npz
+#     test_data: ../../data/tiny_npz/test.npz
+criteoprivate_custom:
     data_root: ../../data/
-    data_format: npz
-    train_data: ../../data/tiny_npz/train.npz
-    valid_data: ../../data/tiny_npz/valid.npz
-    test_data: ../../data/tiny_npz/test.npz
+    data_format: parquet
+    train_data: ../../data/criteoprivate_custom/train.parquet
+    valid_data: ../../data/criteoprivate_custom/valid.parquet
+    test_data: ../../data/criteoprivate_custom/test.parquet
+    

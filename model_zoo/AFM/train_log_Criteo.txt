@@ -1,0 +1,284 @@
+Script started on 2025-06-03 09:57:40+00:00 [TERM="xterm-color" TTY="/dev/pts/0" COLUMNS="-1" LINES="-1"]
+2025-06-03 09:57:49,254 P1292 INFO FuxiCTR version: 2.3.7
+2025-06-03 09:57:49,256 P1292 INFO Params: {
+    "attention_dim": "64",
+    "attention_dropout": "[0, 0]",
+    "batch_size": "4096",
+    "data_format": "parquet",
+    "data_root": "../../data/",
+    "dataset_id": "criteoprivate_custom",
+    "embedding_dim": "32",
+    "embedding_dropout": "0",
+    "embedding_regularizer": "0",
+    "epochs": "100",
+    "feature_specs": "{'user_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'display_order': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'campaign_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'publisher_id': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_0': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_1': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_2': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_3': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_4': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_6': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_7': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_8': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_9': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_10': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_11': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_12': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_13': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_15': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_16': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_17': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_18': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_19': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_20': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_21': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_22': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_23': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_24': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_25': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_26': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_27': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_28': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_29': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_bits_constrained_30': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_1': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_2': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_3': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_4': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_5': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_6': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_7': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_kv_not_constrained_8': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_0': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_1': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_2': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_3': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_4': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_5': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_6': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_7': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_8': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_9': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_browser_bits_constrained_10': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_0': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_1': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_2': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_3': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_4': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_5': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_6': {'type': 'categorical', 'dtype': 'str', 'active': True}, 'features_ctx_not_constrained_7': {'type': 'categorical', 'dtype': 'str', 'active': True}}",
+    "gpu": "-1",
+    "label_col": "[{'name': 'is_clicked', 'dtype': 'int'}]",
+    "learning_rate": "0.001",
+    "loss": "binary_crossentropy",
+    "metrics": "['logloss', 'AUC']",
+    "model": "AFM",
+    "model_id": "AFM_criteo",
+    "model_root": "./model_ckpt/",
+    "monitor": "{'AUC': 1, 'logloss': -1}",
+    "monitor_mode": "max",
+    "net_regularizer": "0",
+    "optimizer": "adam",
+    "seed": "2019",
+    "shuffle": "True",
+    "task": "binary_classification",
+    "test_data": "../../data/criteoprivate_custom/test.parquet",
+    "train_data": "../../data/criteoprivate_custom/train.parquet",
+    "use_attention": "True",
+    "use_features": "['user_id', 'display_order', 'campaign_id', 'publisher_id', 'features_kv_bits_constrained_0', 'features_kv_bits_constrained_1', 'features_kv_bits_constrained_2', 'features_kv_bits_constrained_3', 'features_kv_bits_constrained_4', 'features_kv_bits_constrained_6', 'features_kv_bits_constrained_7', 'features_kv_bits_constrained_8', 'features_kv_bits_constrained_9', 'features_kv_bits_constrained_10', 'features_kv_bits_constrained_11', 'features_kv_bits_constrained_12', 'features_kv_bits_constrained_13', 'features_kv_bits_constrained_15', 'features_kv_bits_constrained_16', 'features_kv_bits_constrained_17', 'features_kv_bits_constrained_18', 'features_kv_bits_constrained_19', 'features_kv_bits_constrained_20', 'features_kv_bits_constrained_21', 'features_kv_bits_constrained_22', 'features_kv_bits_constrained_23', 'features_kv_bits_constrained_24', 'features_kv_bits_constrained_25', 'features_kv_bits_constrained_26', 'features_kv_bits_constrained_27', 'features_kv_bits_constrained_28', 'features_kv_bits_constrained_29', 'features_kv_bits_constrained_30', 'features_kv_not_constrained_1', 'features_kv_not_constrained_2', 'features_kv_not_constrained_3', 'features_kv_not_constrained_4', 'features_kv_not_constrained_5', 'features_kv_not_constrained_6', 'features_kv_not_constrained_7', 'features_kv_not_constrained_8', 'features_browser_bits_constrained_0', 'features_browser_bits_constrained_1', 'features_browser_bits_constrained_2', 'features_browser_bits_constrained_3', 'features_browser_bits_constrained_4', 'features_browser_bits_constrained_5', 'features_browser_bits_constrained_6', 'features_browser_bits_constrained_7', 'features_browser_bits_constrained_8', 'features_browser_bits_constrained_9', 'features_browser_bits_constrained_10', 'features_ctx_not_constrained_0', 'features_ctx_not_constrained_1', 'features_ctx_not_constrained_2', 'features_ctx_not_constrained_3', 'features_ctx_not_constrained_4', 'features_ctx_not_constrained_5', 'features_ctx_not_constrained_6', 'features_ctx_not_constrained_7']",
+    "valid_data": "../../data/criteoprivate_custom/valid.parquet",
+    "verbose": "1"
+}
+2025-06-03 09:57:49,260 P1292 INFO Set up feature processor...
+2025-06-03 09:57:49,404 P1292 WARNING Skip rebuilding ../../data/criteoprivate_custom/feature_map.json. Please delete it manually if rebuilding is required.
+2025-06-03 09:57:49,405 P1292 INFO Load feature_map from json: ../../data/criteoprivate_custom/feature_map.json
+2025-06-03 09:57:49,844 P1292 INFO Set column index...
+2025-06-03 09:57:49,845 P1292 INFO Feature specs: {
+    "campaign_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 5222, 'dtype': 'str', 'active': True}",
+    "display_order": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 76, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_0": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 538, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 20793, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_10": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1768, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 474, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 5453, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 39776, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1638, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 3515, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1172, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 4668, 'dtype': 'str', 'active': True}",
+    "features_browser_bits_constrained_9": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1080, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_0": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 31, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 14103, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 4548, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 105, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 53038, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 55730, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11, 'dtype': 'str', 'active': True}",
+    "features_ctx_not_constrained_7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 480, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_0": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 102, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 6152, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_10": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 10858, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_11": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 2187, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_12": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 137, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_13": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 308, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_15": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 56, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_16": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 99, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_17": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 135, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_18": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 283, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_19": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 517, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 11, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_20": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 875, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_21": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 1582, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_22": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 176, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_23": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 16225, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_24": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 10621, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_25": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 47838, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_26": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 4, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_27": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 37996, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_28": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 101937, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_29": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 97976, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 12, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_30": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 59067, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 43529, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 42748, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 9849, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 2147, 'dtype': 'str', 'active': True}",
+    "features_kv_bits_constrained_9": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 4815, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_1": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 89, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_2": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 13, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_3": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 4, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_4": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 25239, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_5": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 29671, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_6": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 17266, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_7": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 22838, 'dtype': 'str', 'active': True}",
+    "features_kv_not_constrained_8": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 14660, 'dtype': 'str', 'active': True}",
+    "publisher_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 12542, 'dtype': 'str', 'active': True}",
+    "user_id": "{'source': '', 'type': 'categorical', 'padding_idx': 0, 'vocab_size': 90097, 'dtype': 'str', 'active': True}"
+}
+2025-06-03 09:57:56,605 P1292 INFO Total number of parameters: 30523249.
+2025-06-03 09:57:56,606 P1292 INFO Loading datasets...
+2025-06-03 09:57:58,572 P1292 INFO Train samples: total/140003, blocks/1
+2025-06-03 09:57:59,042 P1292 INFO Validation samples: total/29994, blocks/1
+2025-06-03 09:57:59,042 P1292 INFO Loading train and validation data done.
+2025-06-03 09:57:59,043 P1292 INFO Start training: 35 batches/epoch
+2025-06-03 09:57:59,043 P1292 INFO ************ Epoch=1 start ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:16<09:31, 16.82s/it]  6% 2/35 [00:32<08:43, 15.88s/it]  9% 3/35 [00:46<08:12, 15.40s/it] 11% 4/35 [01:01<07:48, 15.12s/it] 14% 5/35 [01:16<07:29, 14.98s/it] 17% 6/35 [01:31<07:17, 15.10s/it] 20% 7/35 [01:46<06:59, 14.99s/it] 23% 8/35 [02:01<06:43, 14.96s/it] 26% 9/35 [02:16<06:31, 15.07s/it] 29% 10/35 [02:31<06:12, 14.92s/it] 31% 11/35 [02:46<05:57, 14.90s/it] 34% 12/35 [03:01<05:43, 14.96s/it] 37% 13/35 [03:15<05:28, 14.93s/it] 40% 14/35 [03:31<05:14, 14.99s/it] 43% 15/35 [03:45<04:59, 14.96s/it] 46% 16/35 [04:00<04:42, 14.89s/it] 49% 17/35 [04:15<04:27, 14.86s/it] 51% 18/35 [04:30<04:12, 14.87s/it] 54% 19/35 [04:45<03:59, 14.97s/it] 57% 20/35 [05:00<03:43, 14.91s/it] 60% 21/35 [05:14<03:27, 14.82s/it] 63% 22/35 [05:29<03:11, 14.74s/it] 66% 23/35 [05:44<02:56, 14.75s/it] 69% 24/35 [05:59<02:42, 14.81s/it] 71% 25/35 [06:14<02:28, 14.81s/it] 74% 26/35 [06:28<02:13, 14.78s/it] 77% 27/35 [06:43<01:58, 14.79s/it] 80% 28/35 [06:58<01:43, 14.81s/it] 83% 29/35 [07:13<01:28, 14.78s/it] 86% 30/35 [07:27<01:13, 14.73s/it] 89% 31/35 [07:42<00:58, 14.72s/it] 91% 32/35 [07:57<00:44, 14.71s/it] 94% 33/35 [08:13<00:30, 15.08s/it] 97% 34/35 [08:27<00:14, 14.92s/it]2025-06-03 10:06:29,389 P1292 INFO Train loss: 0.632296
+2025-06-03 10:06:29,390 P1292 INFO Evaluation @epoch 1 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:05<00:38,  5.55s/it][A
+ 25% 2/8 [00:11<00:35,  5.99s/it][A
+ 38% 3/8 [00:17<00:28,  5.69s/it][A
+ 50% 4/8 [00:23<00:23,  5.95s/it][A
+ 62% 5/8 [00:28<00:17,  5.71s/it][A
+ 75% 6/8 [00:34<00:11,  5.62s/it][A
+ 88% 7/8 [00:40<00:05,  5.73s/it][A
+100% 8/8 [00:41<00:00,  4.46s/it][A100% 8/8 [00:41<00:00,  5.25s/it]
+2025-06-03 10:07:11,431 P1292 INFO [Metrics] AUC: 0.761313 - logloss: 0.598394
+2025-06-03 10:07:11,431 P1292 INFO Save best model: monitor(max)=0.162920
+100% 35/35 [09:17<00:00, 25.33s/it]100% 35/35 [09:17<00:00, 15.92s/it]
+2025-06-03 10:07:16,357 P1292 INFO ************ Epoch=1 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:17<10:04, 17.78s/it]  6% 2/35 [00:32<08:44, 15.89s/it]  9% 3/35 [00:47<08:11, 15.37s/it] 11% 4/35 [01:02<07:51, 15.22s/it] 14% 5/35 [01:17<07:35, 15.19s/it] 17% 6/35 [01:32<07:17, 15.10s/it] 20% 7/35 [01:46<07:00, 15.02s/it] 23% 8/35 [02:01<06:43, 14.96s/it] 26% 9/35 [02:16<06:28, 14.93s/it] 29% 10/35 [02:31<06:12, 14.90s/it] 31% 11/35 [02:46<05:57, 14.88s/it] 34% 12/35 [03:01<05:40, 14.81s/it] 37% 13/35 [03:16<05:33, 15.16s/it] 40% 14/35 [03:31<05:16, 15.06s/it] 43% 15/35 [03:46<05:00, 15.00s/it] 46% 16/35 [04:01<04:44, 14.99s/it] 49% 17/35 [04:16<04:29, 14.97s/it] 51% 18/35 [04:31<04:13, 14.90s/it] 54% 19/35 [04:45<03:57, 14.83s/it] 57% 20/35 [05:00<03:42, 14.82s/it] 60% 21/35 [05:15<03:27, 14.80s/it] 63% 22/35 [05:30<03:12, 14.84s/it] 66% 23/35 [05:45<02:58, 14.87s/it] 69% 24/35 [06:00<02:43, 14.88s/it] 71% 25/35 [06:15<02:28, 14.89s/it] 74% 26/35 [06:30<02:13, 14.87s/it] 77% 27/35 [06:45<01:59, 14.96s/it] 80% 28/35 [07:00<01:45, 15.01s/it] 83% 29/35 [07:15<01:29, 14.98s/it] 86% 30/35 [07:30<01:14, 14.97s/it] 89% 31/35 [07:46<01:01, 15.30s/it] 91% 32/35 [08:01<00:45, 15.17s/it] 94% 33/35 [08:16<00:30, 15.16s/it] 97% 34/35 [08:31<00:15, 15.06s/it]2025-06-03 10:15:50,428 P1292 INFO Train loss: 0.559062
+2025-06-03 10:15:50,428 P1292 INFO Evaluation @epoch 2 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:05<00:38,  5.53s/it][A
+ 25% 2/8 [00:11<00:36,  6.04s/it][A
+ 38% 3/8 [00:17<00:28,  5.72s/it][A
+ 50% 4/8 [00:22<00:22,  5.66s/it][A
+ 62% 5/8 [00:28<00:17,  5.83s/it][A
+ 75% 6/8 [00:34<00:11,  5.67s/it][A
+ 88% 7/8 [00:40<00:05,  5.88s/it][A
+100% 8/8 [00:42<00:00,  4.58s/it][A100% 8/8 [00:42<00:00,  5.31s/it]
+2025-06-03 10:16:32,921 P1292 INFO [Metrics] AUC: 0.777966 - logloss: 0.564539
+2025-06-03 10:16:32,922 P1292 INFO Save best model: monitor(max)=0.213427
+100% 35/35 [09:16<00:00, 24.29s/it]100% 35/35 [09:16<00:00, 15.91s/it]
+2025-06-03 10:16:33,350 P1292 INFO ************ Epoch=2 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:18<10:16, 18.12s/it]  6% 2/35 [00:32<08:53, 16.16s/it]  9% 3/35 [00:47<08:16, 15.52s/it] 11% 4/35 [01:02<07:52, 15.23s/it] 14% 5/35 [01:17<07:32, 15.08s/it] 17% 6/35 [01:31<07:12, 14.92s/it] 20% 7/35 [01:46<06:55, 14.84s/it] 23% 8/35 [02:01<06:39, 14.78s/it] 26% 9/35 [02:16<06:26, 14.85s/it] 29% 10/35 [02:31<06:11, 14.87s/it] 31% 11/35 [02:45<05:55, 14.83s/it] 34% 12/35 [03:01<05:47, 15.12s/it] 37% 13/35 [03:16<05:29, 14.99s/it] 40% 14/35 [03:31<05:13, 14.91s/it] 43% 15/35 [03:45<04:56, 14.85s/it] 46% 16/35 [04:00<04:41, 14.84s/it] 49% 17/35 [04:15<04:27, 14.86s/it] 51% 18/35 [04:30<04:11, 14.79s/it] 54% 19/35 [04:44<03:55, 14.74s/it] 57% 20/35 [04:59<03:40, 14.69s/it] 60% 21/35 [05:13<03:25, 14.68s/it] 63% 22/35 [05:28<03:12, 14.77s/it] 66% 23/35 [05:43<02:57, 14.81s/it] 69% 24/35 [05:58<02:42, 14.79s/it] 71% 25/35 [06:13<02:28, 14.81s/it] 74% 26/35 [06:28<02:13, 14.80s/it] 77% 27/35 [06:42<01:58, 14.75s/it] 80% 28/35 [06:57<01:43, 14.75s/it] 83% 29/35 [07:12<01:28, 14.77s/it] 86% 30/35 [07:28<01:15, 15.11s/it] 89% 31/35 [07:42<00:59, 14.97s/it] 91% 32/35 [07:57<00:44, 14.89s/it] 94% 33/35 [08:12<00:29, 14.92s/it] 97% 34/35 [08:27<00:14, 14.91s/it]2025-06-03 10:25:03,508 P1292 INFO Train loss: 0.516012
+2025-06-03 10:25:03,508 P1292 INFO Evaluation @epoch 3 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:06<00:42,  6.03s/it][A
+ 25% 2/8 [00:11<00:34,  5.75s/it][A
+ 38% 3/8 [00:16<00:27,  5.54s/it][A
+ 50% 4/8 [00:23<00:23,  5.81s/it][A
+ 62% 5/8 [00:28<00:16,  5.60s/it][A
+ 75% 6/8 [00:34<00:11,  5.82s/it][A
+ 88% 7/8 [00:39<00:05,  5.64s/it][A
+100% 8/8 [00:41<00:00,  4.39s/it][A100% 8/8 [00:41<00:00,  5.20s/it]
+2025-06-03 10:25:45,142 P1292 INFO [Metrics] AUC: 0.788092 - logloss: 0.544828
+2025-06-03 10:25:45,143 P1292 INFO Save best model: monitor(max)=0.243264
+100% 35/35 [09:12<00:00, 23.80s/it]100% 35/35 [09:12<00:00, 15.78s/it]
+2025-06-03 10:25:45,565 P1292 INFO ************ Epoch=3 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:17<09:52, 17.43s/it]  6% 2/35 [00:32<08:39, 15.76s/it]  9% 3/35 [00:46<08:09, 15.29s/it] 11% 4/35 [01:01<07:46, 15.05s/it] 14% 5/35 [01:16<07:28, 14.96s/it] 17% 6/35 [01:31<07:13, 14.95s/it] 20% 7/35 [01:46<06:57, 14.92s/it] 23% 8/35 [02:00<06:41, 14.85s/it] 26% 9/35 [02:15<06:25, 14.82s/it] 29% 10/35 [02:30<06:13, 14.95s/it] 31% 11/35 [02:47<06:11, 15.47s/it] 34% 12/35 [03:02<05:54, 15.41s/it] 37% 13/35 [03:17<05:35, 15.24s/it] 40% 14/35 [03:32<05:17, 15.12s/it] 43% 15/35 [03:46<04:59, 14.97s/it] 46% 16/35 [04:01<04:42, 14.86s/it] 49% 17/35 [04:16<04:26, 14.81s/it] 51% 18/35 [04:30<04:11, 14.77s/it] 54% 19/35 [04:46<03:57, 14.86s/it] 57% 20/35 [05:00<03:43, 14.88s/it] 60% 21/35 [05:15<03:28, 14.88s/it] 63% 22/35 [05:30<03:12, 14.83s/it] 66% 23/35 [05:45<02:57, 14.78s/it] 69% 24/35 [05:59<02:42, 14.74s/it] 71% 25/35 [06:14<02:27, 14.75s/it] 74% 26/35 [06:29<02:13, 14.78s/it] 77% 27/35 [06:44<01:58, 14.78s/it] 80% 28/35 [06:59<01:43, 14.81s/it] 83% 29/35 [07:15<01:31, 15.21s/it] 86% 30/35 [07:30<01:15, 15.19s/it] 89% 31/35 [07:45<01:00, 15.11s/it] 91% 32/35 [07:59<00:44, 14.97s/it] 94% 33/35 [08:14<00:29, 14.90s/it] 97% 34/35 [08:29<00:14, 14.88s/it]2025-06-03 10:34:17,719 P1292 INFO Train loss: 0.483940
+2025-06-03 10:34:17,719 P1292 INFO Evaluation @epoch 4 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:06<00:45,  6.45s/it][A
+ 25% 2/8 [00:11<00:34,  5.77s/it][A
+ 38% 3/8 [00:18<00:30,  6.05s/it][A
+ 50% 4/8 [00:23<00:22,  5.75s/it][A
+ 62% 5/8 [00:29<00:17,  5.76s/it][A
+ 75% 6/8 [00:34<00:11,  5.77s/it][A
+ 88% 7/8 [00:40<00:05,  5.60s/it][A
+100% 8/8 [00:42<00:00,  4.44s/it][A100% 8/8 [00:42<00:00,  5.28s/it]
+2025-06-03 10:35:00,009 P1292 INFO [Metrics] AUC: 0.795135 - logloss: 0.531481
+2025-06-03 10:35:00,010 P1292 INFO Save best model: monitor(max)=0.263654
+100% 35/35 [09:15<00:00, 24.07s/it]100% 35/35 [09:15<00:00, 15.86s/it]
+2025-06-03 10:35:00,704 P1292 INFO ************ Epoch=4 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:18<10:25, 18.40s/it]  6% 2/35 [00:33<09:01, 16.42s/it]  9% 3/35 [00:48<08:21, 15.68s/it] 11% 4/35 [01:03<07:55, 15.35s/it] 14% 5/35 [01:17<07:34, 15.14s/it] 17% 6/35 [01:32<07:16, 15.06s/it] 20% 7/35 [01:47<06:59, 15.00s/it] 23% 8/35 [02:02<06:43, 14.94s/it] 26% 9/35 [02:18<06:36, 15.26s/it] 29% 10/35 [02:33<06:18, 15.14s/it] 31% 11/35 [02:47<05:59, 14.96s/it] 34% 12/35 [03:02<05:42, 14.90s/it] 37% 13/35 [03:17<05:29, 14.96s/it] 40% 14/35 [03:32<05:14, 14.98s/it] 43% 15/35 [03:47<04:58, 14.91s/it] 46% 16/35 [04:02<04:42, 14.88s/it] 49% 17/35 [04:16<04:26, 14.82s/it] 51% 18/35 [04:31<04:11, 14.80s/it] 54% 19/35 [04:46<03:56, 14.80s/it] 57% 20/35 [05:01<03:41, 14.78s/it] 60% 21/35 [05:15<03:26, 14.75s/it] 63% 22/35 [05:30<03:11, 14.73s/it] 66% 23/35 [05:45<02:56, 14.75s/it] 69% 24/35 [06:00<02:42, 14.76s/it] 71% 25/35 [06:15<02:27, 14.79s/it] 74% 26/35 [06:29<02:13, 14.83s/it] 77% 27/35 [06:46<02:02, 15.26s/it] 80% 28/35 [07:01<01:46, 15.17s/it] 83% 29/35 [07:15<01:30, 15.06s/it] 86% 30/35 [07:30<01:14, 14.97s/it] 89% 31/35 [07:45<00:59, 14.96s/it] 91% 32/35 [08:00<00:44, 14.93s/it] 94% 33/35 [08:15<00:29, 14.90s/it] 97% 34/35 [08:30<00:14, 14.90s/it]2025-06-03 10:43:34,368 P1292 INFO Train loss: 0.455991
+2025-06-03 10:43:34,369 P1292 INFO Evaluation @epoch 5 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:05<00:38,  5.51s/it][A
+ 25% 2/8 [00:11<00:34,  5.67s/it][A
+ 38% 3/8 [00:17<00:28,  5.74s/it][A
+ 50% 4/8 [00:22<00:22,  5.57s/it][A
+ 62% 5/8 [00:28<00:17,  5.82s/it][A
+ 75% 6/8 [00:33<00:11,  5.64s/it][A
+ 88% 7/8 [00:40<00:05,  5.78s/it][A
+100% 8/8 [00:41<00:00,  4.55s/it][A100% 8/8 [00:42<00:00,  5.25s/it]
+2025-06-03 10:44:16,398 P1292 INFO [Metrics] AUC: 0.801752 - logloss: 0.516780
+2025-06-03 10:44:16,399 P1292 INFO Save best model: monitor(max)=0.284972
+100% 35/35 [09:16<00:00, 24.19s/it]100% 35/35 [09:16<00:00, 15.89s/it]
+2025-06-03 10:44:16,880 P1292 INFO ************ Epoch=5 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:18<10:20, 18.25s/it]  6% 2/35 [00:33<08:56, 16.26s/it]  9% 3/35 [00:48<08:22, 15.69s/it] 11% 4/35 [01:03<07:56, 15.37s/it] 14% 5/35 [01:17<07:35, 15.18s/it] 17% 6/35 [01:32<07:16, 15.07s/it] 20% 7/35 [01:47<07:00, 15.02s/it] 23% 8/35 [02:03<06:51, 15.25s/it] 26% 9/35 [02:18<06:33, 15.12s/it] 29% 10/35 [02:33<06:18, 15.13s/it] 31% 11/35 [02:48<06:03, 15.14s/it] 34% 12/35 [03:03<05:46, 15.07s/it] 37% 13/35 [03:18<05:29, 14.98s/it] 40% 14/35 [03:32<05:13, 14.91s/it] 43% 15/35 [03:47<04:57, 14.87s/it] 46% 16/35 [04:02<04:43, 14.90s/it] 49% 17/35 [04:17<04:28, 14.91s/it] 51% 18/35 [04:32<04:13, 14.92s/it] 54% 19/35 [04:47<03:57, 14.83s/it] 57% 20/35 [05:01<03:42, 14.80s/it] 60% 21/35 [05:16<03:26, 14.73s/it] 63% 22/35 [05:31<03:11, 14.77s/it] 66% 23/35 [05:46<02:57, 14.83s/it] 69% 24/35 [06:01<02:43, 14.87s/it] 71% 25/35 [06:17<02:32, 15.24s/it] 74% 26/35 [06:32<02:15, 15.09s/it] 77% 27/35 [06:46<02:00, 15.00s/it] 80% 28/35 [07:01<01:44, 14.96s/it] 83% 29/35 [07:16<01:29, 14.91s/it] 86% 30/35 [07:31<01:14, 14.82s/it] 89% 31/35 [07:45<00:59, 14.80s/it] 91% 32/35 [08:00<00:44, 14.76s/it] 94% 33/35 [08:15<00:29, 14.84s/it] 97% 34/35 [08:30<00:14, 14.89s/it]2025-06-03 10:52:50,188 P1292 INFO Train loss: 0.427752
+2025-06-03 10:52:50,189 P1292 INFO Evaluation @epoch 6 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:06<00:43,  6.17s/it][A
+ 25% 2/8 [00:11<00:34,  5.81s/it][A
+ 38% 3/8 [00:16<00:27,  5.55s/it][A
+ 50% 4/8 [00:23<00:23,  5.81s/it][A
+ 62% 5/8 [00:28<00:16,  5.63s/it][A
+ 75% 6/8 [00:34<00:11,  5.87s/it][A
+ 88% 7/8 [00:40<00:05,  5.67s/it][A
+100% 8/8 [00:41<00:00,  4.41s/it][A100% 8/8 [00:41<00:00,  5.23s/it]
+2025-06-03 10:53:32,056 P1292 INFO [Metrics] AUC: 0.808394 - logloss: 0.507359
+2025-06-03 10:53:32,057 P1292 INFO Save best model: monitor(max)=0.301035
+100% 35/35 [09:15<00:00, 23.90s/it]100% 35/35 [09:15<00:00, 15.88s/it]
+2025-06-03 10:53:32,517 P1292 INFO ************ Epoch=6 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:17<09:47, 17.27s/it]  6% 2/35 [00:31<08:38, 15.70s/it]  9% 3/35 [00:46<08:07, 15.23s/it] 11% 4/35 [01:01<07:45, 15.02s/it] 14% 5/35 [01:16<07:29, 14.98s/it] 17% 6/35 [01:31<07:22, 15.26s/it] 20% 7/35 [01:46<07:02, 15.08s/it] 23% 8/35 [02:01<06:44, 14.99s/it] 26% 9/35 [02:16<06:26, 14.86s/it] 29% 10/35 [02:30<06:09, 14.79s/it] 31% 11/35 [02:45<05:54, 14.76s/it] 34% 12/35 [03:00<05:40, 14.82s/it] 37% 13/35 [03:14<05:25, 14.77s/it] 40% 14/35 [03:29<05:09, 14.73s/it] 43% 15/35 [03:44<04:53, 14.67s/it] 46% 16/35 [03:58<04:38, 14.65s/it] 49% 17/35 [04:13<04:24, 14.71s/it] 51% 18/35 [04:28<04:10, 14.74s/it] 54% 19/35 [04:43<03:55, 14.70s/it] 57% 20/35 [04:57<03:40, 14.70s/it] 60% 21/35 [05:12<03:25, 14.71s/it] 63% 22/35 [05:27<03:11, 14.75s/it] 66% 23/35 [05:42<02:59, 14.95s/it] 69% 24/35 [05:57<02:44, 14.93s/it] 71% 25/35 [06:12<02:28, 14.89s/it] 74% 26/35 [06:27<02:13, 14.85s/it] 77% 27/35 [06:42<01:59, 14.89s/it] 80% 28/35 [06:56<01:44, 14.88s/it] 83% 29/35 [07:12<01:29, 14.98s/it] 86% 30/35 [07:27<01:14, 14.98s/it] 89% 31/35 [07:42<00:59, 14.96s/it] 91% 32/35 [07:56<00:44, 14.91s/it] 94% 33/35 [08:11<00:29, 14.87s/it] 97% 34/35 [08:26<00:14, 14.88s/it]2025-06-03 11:02:02,101 P1292 INFO Train loss: 0.401843
+2025-06-03 11:02:02,101 P1292 INFO Evaluation @epoch 7 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:06<00:42,  6.07s/it][A
+ 25% 2/8 [00:11<00:34,  5.68s/it][A
+ 38% 3/8 [00:17<00:29,  6.00s/it][A
+ 50% 4/8 [00:23<00:22,  5.75s/it][A
+ 62% 5/8 [00:29<00:17,  5.97s/it][A
+ 75% 6/8 [00:35<00:11,  5.80s/it][A
+ 88% 7/8 [00:40<00:05,  5.74s/it][A
+100% 8/8 [00:43<00:00,  4.69s/it][A100% 8/8 [00:43<00:00,  5.39s/it]
+2025-06-03 11:02:45,292 P1292 INFO [Metrics] AUC: 0.815440 - logloss: 0.499165
+2025-06-03 11:02:45,293 P1292 INFO Save best model: monitor(max)=0.316275
+100% 35/35 [09:13<00:00, 24.43s/it]100% 35/35 [09:13<00:00, 15.81s/it]
+2025-06-03 11:02:45,867 P1292 INFO ************ Epoch=7 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:17<10:07, 17.86s/it]  6% 2/35 [00:32<08:54, 16.20s/it]  9% 3/35 [00:47<08:20, 15.66s/it] 11% 4/35 [01:03<08:06, 15.68s/it] 14% 5/35 [01:18<07:42, 15.42s/it] 17% 6/35 [01:33<07:21, 15.24s/it] 20% 7/35 [01:48<07:05, 15.20s/it] 23% 8/35 [02:03<06:48, 15.14s/it] 26% 9/35 [02:18<06:30, 15.01s/it] 29% 10/35 [02:33<06:13, 14.95s/it] 31% 11/35 [02:48<05:59, 14.99s/it] 34% 12/35 [03:03<05:45, 15.00s/it] 37% 13/35 [03:18<05:29, 14.95s/it] 40% 14/35 [03:32<05:12, 14.89s/it] 43% 15/35 [03:47<04:57, 14.86s/it] 46% 16/35 [04:02<04:42, 14.85s/it] 49% 17/35 [04:17<04:26, 14.83s/it] 51% 18/35 [04:32<04:11, 14.82s/it] 54% 19/35 [04:46<03:56, 14.80s/it] 57% 20/35 [05:01<03:41, 14.76s/it] 60% 21/35 [05:17<03:32, 15.19s/it] 63% 22/35 [05:32<03:16, 15.12s/it] 66% 23/35 [05:47<03:00, 15.08s/it] 69% 24/35 [06:02<02:45, 15.03s/it] 71% 25/35 [06:17<02:29, 14.94s/it] 74% 26/35 [06:31<02:13, 14.87s/it] 77% 27/35 [06:46<01:58, 14.85s/it] 80% 28/35 [07:01<01:43, 14.82s/it] 83% 29/35 [07:16<01:28, 14.80s/it] 86% 30/35 [07:31<01:14, 14.81s/it] 89% 31/35 [07:45<00:59, 14.79s/it] 91% 32/35 [08:00<00:44, 14.82s/it] 94% 33/35 [08:15<00:29, 14.86s/it] 97% 34/35 [08:30<00:14, 14.93s/it]2025-06-03 11:11:19,225 P1292 INFO Train loss: 0.369659
+2025-06-03 11:11:19,226 P1292 INFO Evaluation @epoch 8 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:05<00:39,  5.68s/it][A
+ 25% 2/8 [00:11<00:35,  5.88s/it][A
+ 38% 3/8 [00:16<00:27,  5.58s/it][A
+ 50% 4/8 [00:23<00:23,  5.84s/it][A
+ 62% 5/8 [00:28<00:16,  5.64s/it][A
+ 75% 6/8 [00:34<00:11,  5.69s/it][A
+ 88% 7/8 [00:39<00:05,  5.70s/it][A
+100% 8/8 [00:41<00:00,  4.44s/it][A100% 8/8 [00:41<00:00,  5.22s/it]
+2025-06-03 11:12:00,978 P1292 INFO [Metrics] AUC: 0.817232 - logloss: 0.496268
+2025-06-03 11:12:00,979 P1292 INFO Save best model: monitor(max)=0.320964
+100% 35/35 [09:15<00:00, 23.88s/it]100% 35/35 [09:15<00:00, 15.88s/it]
+2025-06-03 11:12:01,796 P1292 INFO ************ Epoch=8 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:17<10:11, 17.98s/it]  6% 2/35 [00:32<08:54, 16.21s/it]  9% 3/35 [00:47<08:18, 15.59s/it] 11% 4/35 [01:02<07:53, 15.28s/it] 14% 5/35 [01:17<07:35, 15.18s/it] 17% 6/35 [01:32<07:18, 15.11s/it] 20% 7/35 [01:47<07:00, 15.00s/it] 23% 8/35 [02:02<06:42, 14.90s/it] 26% 9/35 [02:16<06:25, 14.83s/it] 29% 10/35 [02:31<06:10, 14.83s/it] 31% 11/35 [02:46<05:55, 14.82s/it] 34% 12/35 [03:01<05:41, 14.85s/it] 37% 13/35 [03:16<05:26, 14.86s/it] 40% 14/35 [03:30<05:11, 14.82s/it] 43% 15/35 [03:45<04:55, 14.80s/it] 46% 16/35 [04:00<04:40, 14.79s/it] 49% 17/35 [04:15<04:27, 14.86s/it] 51% 18/35 [04:30<04:14, 15.00s/it] 54% 19/35 [04:46<04:03, 15.23s/it] 57% 20/35 [05:01<03:46, 15.07s/it] 60% 21/35 [05:15<03:29, 14.95s/it] 63% 22/35 [05:30<03:13, 14.87s/it] 66% 23/35 [05:45<02:58, 14.86s/it] 69% 24/35 [06:00<02:43, 14.91s/it] 71% 25/35 [06:15<02:28, 14.83s/it] 74% 26/35 [06:29<02:13, 14.82s/it] 77% 27/35 [06:44<01:58, 14.78s/it] 80% 28/35 [06:59<01:43, 14.83s/it] 83% 29/35 [07:14<01:29, 14.87s/it] 86% 30/35 [07:29<01:14, 14.87s/it] 89% 31/35 [07:44<00:59, 14.81s/it] 91% 32/35 [07:58<00:44, 14.79s/it] 94% 33/35 [08:13<00:29, 14.80s/it] 97% 34/35 [08:28<00:14, 14.79s/it]2025-06-03 11:20:33,174 P1292 INFO Train loss: 0.323185
+2025-06-03 11:20:33,175 P1292 INFO Evaluation @epoch 9 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:06<00:42,  6.07s/it][A
+ 25% 2/8 [00:11<00:33,  5.60s/it][A
+ 38% 3/8 [00:17<00:29,  5.90s/it][A
+ 50% 4/8 [00:23<00:23,  5.81s/it][A
+ 62% 5/8 [00:30<00:18,  6.22s/it][A
+ 75% 6/8 [00:35<00:11,  5.90s/it][A
+ 88% 7/8 [00:41<00:05,  5.83s/it][A
+100% 8/8 [00:43<00:00,  4.70s/it][A100% 8/8 [00:43<00:00,  5.44s/it]
+2025-06-03 11:21:16,709 P1292 INFO [Metrics] AUC: 0.813896 - logloss: 0.502181
+2025-06-03 11:21:16,710 P1292 INFO Monitor(max)=0.311715 STOP!
+2025-06-03 11:21:16,710 P1292 INFO Reduce learning rate on plateau: 0.000100
+100% 35/35 [09:14<00:00, 24.33s/it]100% 35/35 [09:14<00:00, 15.86s/it]
+2025-06-03 11:21:16,771 P1292 INFO ************ Epoch=9 end ************
+  0% 0/35 [00:00<?, ?it/s]  3% 1/35 [00:15<08:42, 15.37s/it]  6% 2/35 [00:30<08:19, 15.14s/it]  9% 3/35 [00:45<08:00, 15.01s/it] 11% 4/35 [00:59<07:41, 14.90s/it] 14% 5/35 [01:14<07:26, 14.87s/it] 17% 6/35 [01:29<07:10, 14.85s/it] 20% 7/35 [01:44<06:54, 14.82s/it] 23% 8/35 [01:59<06:39, 14.80s/it] 26% 9/35 [02:13<06:24, 14.80s/it] 29% 10/35 [02:28<06:08, 14.72s/it] 31% 11/35 [02:43<05:53, 14.74s/it] 34% 12/35 [02:57<05:37, 14.68s/it] 37% 13/35 [03:12<05:23, 14.72s/it] 40% 14/35 [03:27<05:11, 14.82s/it] 43% 15/35 [03:42<04:56, 14.82s/it] 46% 16/35 [03:57<04:41, 14.83s/it] 49% 17/35 [04:12<04:31, 15.08s/it] 51% 18/35 [04:27<04:14, 14.98s/it] 54% 19/35 [04:42<03:58, 14.91s/it] 57% 20/35 [04:57<03:43, 14.89s/it] 60% 21/35 [05:11<03:27, 14.82s/it] 63% 22/35 [05:26<03:12, 14.82s/it] 66% 23/35 [05:41<02:57, 14.82s/it] 69% 24/35 [05:56<02:43, 14.87s/it] 71% 25/35 [06:11<02:29, 14.90s/it] 74% 26/35 [06:26<02:13, 14.89s/it] 77% 27/35 [06:41<01:58, 14.85s/it] 80% 28/35 [06:56<01:44, 14.88s/it] 83% 29/35 [07:11<01:29, 14.92s/it] 86% 30/35 [07:26<01:14, 14.94s/it] 89% 31/35 [07:41<00:59, 14.94s/it] 91% 32/35 [07:56<00:44, 14.96s/it] 94% 33/35 [08:10<00:29, 14.88s/it] 97% 34/35 [08:26<00:15, 15.23s/it]2025-06-03 11:29:46,192 P1292 INFO Train loss: 0.280983
+2025-06-03 11:29:46,193 P1292 INFO Evaluation @epoch 10 - batch 35: 
+
+  0% 0/8 [00:00<?, ?it/s][A
+ 12% 1/8 [00:05<00:38,  5.45s/it][A
+ 25% 2/8 [00:11<00:35,  5.93s/it][A
+ 38% 3/8 [00:17<00:28,  5.66s/it][A
+ 50% 4/8 [00:23<00:23,  5.94s/it][A
+ 62% 5/8 [00:28<00:17,  5.69s/it][A
+ 75% 6/8 [00:34<00:11,  5.61s/it][A
+ 88% 7/8 [00:40<00:05,  5.74s/it][A
+100% 8/8 [00:41<00:00,  4.46s/it][A100% 8/8 [00:41<00:00,  5.24s/it]
+2025-06-03 11:30:28,102 P1292 INFO [Metrics] AUC: 0.812873 - logloss: 0.505971
+2025-06-03 11:30:28,103 P1292 INFO Monitor(max)=0.306902 STOP!
+2025-06-03 11:30:28,103 P1292 INFO Reduce learning rate on plateau: 0.000010
+2025-06-03 11:30:28,103 P1292 INFO ********* Epoch=10 early stop *********
+ 97% 34/35 [09:11<00:16, 16.22s/it]
+2025-06-03 11:30:28,167 P1292 INFO Training finished.
+2025-06-03 11:30:28,167 P1292 INFO Load best model: /content/drive/MyDrive/FuxiCTR/model_zoo/AFM/model_ckpt/criteoprivate_custom/AFM_criteo.model
+2025-06-03 11:30:28,435 P1292 INFO ****** Validation evaluation ******
+  0% 0/8 [00:00<?, ?it/s] 12% 1/8 [00:05<00:41,  5.87s/it] 25% 2/8 [00:11<00:35,  5.94s/it] 38% 3/8 [00:17<00:28,  5.65s/it] 50% 4/8 [00:23<00:23,  5.93s/it] 62% 5/8 [00:28<00:17,  5.71s/it] 75% 6/8 [00:34<00:11,  5.80s/it] 88% 7/8 [00:40<00:05,  5.72s/it]100% 8/8 [00:42<00:00,  4.46s/it]100% 8/8 [00:42<00:00,  5.27s/it]
+2025-06-03 11:31:10,639 P1292 INFO [Metrics] logloss: 0.496268 - AUC: 0.817232
+2025-06-03 11:31:10,959 P1292 INFO ******** Test evaluation ********
+2025-06-03 11:31:10,960 P1292 INFO Loading datasets...
+2025-06-03 11:31:11,930 P1292 INFO Test samples: total/30003, blocks/1
+2025-06-03 11:31:11,931 P1292 INFO Loading test data done.
+  0% 0/8 [00:00<?, ?it/s] 12% 1/8 [00:06<00:46,  6.69s/it] 25% 2/8 [00:11<00:35,  5.86s/it] 38% 3/8 [00:17<00:29,  5.85s/it] 50% 4/8 [00:23<00:23,  5.84s/it] 62% 5/8 [00:28<00:16,  5.65s/it] 75% 6/8 [00:35<00:11,  5.86s/it] 88% 7/8 [00:40<00:05,  5.68s/it]100% 8/8 [00:42<00:00,  4.43s/it]100% 8/8 [00:42<00:00,  5.29s/it]
+2025-06-03 11:31:54,285 P1292 INFO [Metrics] logloss: 0.685577 - AUC: 0.501204
+
+Script done on 2025-06-03 11:31:59+00:00 [COMMAND_EXIT_CODE="0"]
